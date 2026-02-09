@@ -1,6 +1,6 @@
 How to Run the Project
 1-Clone the Project
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Venkatesh8048/SpringMachineTest.git
     Open in IntelliJ / Eclipse IDE
 
 2 - Create MySQL Database
