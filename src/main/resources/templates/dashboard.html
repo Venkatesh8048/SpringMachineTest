@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Owner Dashboard</h2>
+
+<div class="top-bar">
+    <a href="/product">Add Product</a>
+</div>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.price}"></td>
+        <td th:text="${p.description}"></td>
+
+        <td>
+            <a th:href="@{/prodoctbyid/{id}(id=${p.id})}">View</a>
+            |
+            <a th:href="@{/editproductform/{id}(id=${p.id})}">Edit</a>
+            |
+            <a th:href="@{/deleteproduct/{id}(id=${p.id})}"
+               onclick="return confirm('Are you sure?')">
+                Delete
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
